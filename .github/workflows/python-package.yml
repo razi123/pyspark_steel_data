@@ -22,11 +22,13 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+        distribution: 'ubuntu'
 
     - name: Setup Java
       uses: actions/setup-java@v2
       with:
         java-version: ${{ matrix.java-version }}
+        distribution: 'ubuntu'
 
     - name: Install dependencies
       run: |
