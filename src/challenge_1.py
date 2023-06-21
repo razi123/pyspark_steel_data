@@ -139,7 +139,7 @@ def question6(df_ch1_cars: DataFrame, df_ch1_sales: DataFrame, df_ch1_salesperso
     df_car_details_by_Emily = \
         df_ch1_sales.join(df_ch1_cars, df_ch1_sales.sales_car_id == df_ch1_cars.car_id, 'inner')\
         .join(df_ch1_salesperson, df_ch1_sales.id_salesman == df_ch1_salesperson.salesman_id)\
-        .where("name == 'Emily Wong'")\
+        .where("name == 'Emily Wong'").where(f.year("purchase_date") == '2021')\
         .select("name", "car_id", "make", "type", "style", "cost_$").orderBy("car_id")\
 
 
